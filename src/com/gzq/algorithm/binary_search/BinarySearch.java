@@ -25,9 +25,28 @@ public class BinarySearch {
 
     }
 
+    //递归实现二分查找
+    public static int binarySearch(int[] a, int key, int fromIndex, int toIndex) {
+        //基本判断,当起始位置大于结束位置时，直接返回-1
+        if (key < a[fromIndex] || key > a[toIndex] || fromIndex > toIndex) {
+            return -1;
+        }
+        //计算中间位置
+        int mid = (fromIndex + toIndex) / 2;
+        if (key == a[mid]) {
+            return mid;
+        } else if (key > a[mid]) {
+            return binarySearch(a, key, mid + 1, toIndex);
+        } else {
+            return binarySearch(a, key, fromIndex, mid - 1);
+        }
+
+    }
+
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6};
-        int key = 3;
-        System.out.println(binarySearch(arr,key));
+        int[] arr = {1, 2, 3, 4, 5, 6,7};
+        int key = 1;
+        System.out.println(binarySearch(arr, key));
+        System.out.println(binarySearch(arr, key, 0, arr.length - 1));
     }
 }

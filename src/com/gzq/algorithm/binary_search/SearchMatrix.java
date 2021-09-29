@@ -12,6 +12,7 @@ public class SearchMatrix {
         int left = 0;
         int right = m * n -1;
         while (left<=right){
+            //假装把它展开为一维数组
             int mid = (left+right)/2;
             //计算二维矩阵中对应的行列号，取出对应元素
             int midElement = matrix[mid/n][mid%n];//精髓！！！！！！！！！！！！！

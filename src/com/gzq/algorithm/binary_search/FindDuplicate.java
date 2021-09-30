@@ -67,19 +67,19 @@ public class FindDuplicate {
     //O(n)时间 O(1)空间,快慢指针
     public int findDuplicate(int[] nums) {
         //定义快慢指针
-        int fast = 0,slow = 0;
+        int fast = 0, slow = 0;
         //1.寻找环内相遇点
-        do{//先do是因为开始fast和slow相等，所以让他先进行一次
+        do {//先do是因为开始fast和slow相等，所以让他先进行一次
             //快指针一次走两步，慢指针一次走一步
             slow = nums[slow];
             fast = nums[nums[fast]];
-        }while (fast!=slow);
+        } while (fast != slow);
         //循环结束，slow和fast相等，都是相遇点
         //2.寻找环的入口点
         //另外定义两个指针，固定间距
-        int before = 0,after = slow;
-        while (before!=after){
-            before=nums[before];
+        int before = 0, after = slow;
+        while (before != after) {
+            before = nums[before];
             after = nums[after];
         }
         //循环结束，相遇点就是环的入口点，对应的索引也就是重复元素

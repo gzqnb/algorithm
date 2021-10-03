@@ -3,6 +3,7 @@ package com.gzq.algorithm.skiding_windows;
 import java.util.ArrayList;
 import java.util.List;
 
+//438
 public class FindAnagrams {
     //方法一：暴力法，枚举所有的长度为p.length()的子串
     public List<Integer> findAnagrams1(String s, String p) {

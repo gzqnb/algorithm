@@ -1,7 +1,6 @@
 package com.gzq.algorithm.stack_and_queue;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 //225
